@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Sample: Adding TileStream cache to Leaflet</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" /><![endif]-->
+    <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        $(document).ready(function(){
+            var url = 'http://localhost:8888/v2/geography-class/{z}/{x}/{y}.png';
+ 
+            var map = new L.Map('map').setView([-33, 24], 4);
+ 
+            //change and supply your static ip and cache name 
+            var tileLayer = L.tileLayer(url, {opacity: 0.8});
+ 
+            map.addLayer(tileLayer);
+        });
+    </script>
+</head>
+<body>
+    <div id="map" style="width: 100%; height: 100%"></div>
+</body>
+</html>
